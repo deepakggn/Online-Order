@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Simple AngularJS Order Form</title>
+
+		<link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
+
+		<link href="style.css" rel="stylesheet" />
+	</head>
+	<body ng-app ng-controller="liveCtrl">
+		<form>
+			<h1>Angular Order</h1>
+			<ul>
+				<li ng-repeat="live_ser in live_services_order" ng-click="btntoggleAct(live_ser)" ng-class="{current:live_ser.current}">
+					{{live_ser.name}} <span>{{live_ser.price | currency}}</span>
+				</li>
+			</ul>
+
+			<div class="order_total">
+				Total: <span>{{order_total() | currency}}</span>
+			</div>
+
+		</form>
+		
+		<hr /><hr /><hr /><hr />
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
